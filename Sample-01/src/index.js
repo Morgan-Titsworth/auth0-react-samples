@@ -6,6 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import { Auth0Provider } from "@auth0/auth0-react";
 import history from "./utils/history";
 import { getConfig } from "./config";
+import LoginButton from "./login";
 
 const onRedirectCallback = (appState) => {
   history.push(
@@ -26,7 +27,10 @@ const providerConfig = {
 };
 
 ReactDOM.render(
-  <Auth0Provider {...providerConfig}>
+  <Auth0Provider     
+  domain="dev-4e0czb76.us.auth0.com"
+  clientId="hL9frvLOWFSmqvcsBpkv2iNDymtBwrZo"
+  redirectUri={window.location.origin}>
     <App />
   </Auth0Provider>,
   document.getElementById("root")
